@@ -1,0 +1,215 @@
+{
+  "name": "please-help-app",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "engines": {
+    "node": ">= 16.x",
+    "npm": ">= 8.x"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "clean": "rm -rf ./build",
+    "dev": "vite serve",
+    "preview": "vite preview",
+    "start": "npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "url": "https://github.com/mikesprague/please-help-app"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Michael Sprague",
+    "email": "mikesprague@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikesprague/please-help-app/issues"
+  },
+  "homepage": "https://mikesprague.github.io/please-help-app",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "6.4.0",
+    "@fortawesome/free-brands-svg-icons": "6.4.0",
+    "@fortawesome/free-regular-svg-icons": "6.4.0",
+    "@fortawesome/free-solid-svg-icons": "6.4.0",
+    "@fortawesome/pro-duotone-svg-icons": "6.4.0",
+    "@fortawesome/pro-light-svg-icons": "6.4.0",
+    "@fortawesome/pro-regular-svg-icons": "6.4.0",
+    "@fortawesome/pro-solid-svg-icons": "6.4.0",
+    "@fortawesome/pro-thin-svg-icons": "6.4.0",
+    "@fortawesome/react-fontawesome": "0.2.0",
+    "daisyui": "^2.52.0",
+    "dayjs": "1.11.7",
+    "dotenv": "16.1.1",
+    "got": "13.0.0",
+    "he": "1.2.0",
+    "nanoid": "4.0.2",
+    "prop-types": "15.8.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sweetalert2": "11.7.10",
+    "sweetalert2-react-content": "5.0.7"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "7.21.8",
+    "@babel/eslint-plugin": "7.19.1",
+    "@babel/preset-env": "7.22.4",
+    "@babel/preset-react": "7.22.3",
+    "@fullhuman/postcss-purgecss": "5.0.0",
+    "@tailwindcss/typography": "0.5.9",
+    "@vitejs/plugin-react-swc": "3.3.1",
+    "autoprefixer": "10.4.14",
+    "babel-plugin-add-react-displayname": "0.0.5",
+    "cross-env": "7.0.3",
+    "cssnano": "6.0.1",
+    "cz-git": "1.6.1",
+    "eslint": "8.41.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-config-stylelint": "18.0.0",
+    "eslint-plugin-compat": "4.1.4",
+    "eslint-plugin-html": "7.1.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-markdown": "3.0.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-security": "1.7.1",
+    "postcss": "8.4.24",
+    "postcss-cli": "10.1.0",
+    "prettier": "2.8.8",
+    "prettier-eslint": "15.0.1",
+    "sass": "1.62.1",
+    "stylelint": "15.6.2",
+    "stylelint-config-standard": "33.0.0",
+    "stylelint-config-standard-scss": "9.0.0",
+    "stylelint-prettier": "3.0.0",
+    "tailwindcss": "3.3.2",
+    "vite": "4.3.9",
+    "vite-plugin-html": "3.2.0",
+    "vite-plugin-pwa": "0.15.2"
+  },
+  "babel": {
+    "plugins": [
+      "add-react-displayname"
+    ],
+    "presets": [
+      "@babel/preset-env",
+      "@babel/react"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "settings": {
+      "jest": {
+        "version": 28
+      }
+    },
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:jsx-a11y/recommended",
+      "prettier",
+      "stylelint"
+    ],
+    "plugins": [
+      "compat",
+      "html",
+      "import",
+      "jsx-a11y",
+      "markdown",
+      "prettier",
+      "react",
+      "react-hooks",
+      "security"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 13,
+      "allowImportExportEverywhere": true,
+      "parser": "babel-parser",
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "sourceType": "module"
+    },
+    "rules": {
+      "node/no-missing-import": [
+        "error",
+        {
+          "tryExtensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "node/no-unpublished-import": [
+        "warn",
+        {
+          "tryExtensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "react/jsx-filename-extension": [
+        "error",
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "react/function-component-definition": [
+        2,
+        {
+          "namedComponents": "arrow-function",
+          "unnamedComponents": "arrow-function"
+        }
+      ],
+      "react/destructuring-assignment": "warn",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "error",
+      "react/jsx-boolean-value": "off",
+      "jest/no-deprecated-functions": "off",
+      "jsx-a11y/no-noninteractive-element-interactions": "off",
+      "jsx-a11y/no-static-element-interactions": "off",
+      "jsx-a11y/click-events-have-key-events": "off",
+      "jsx-a11y/no-onchange": "off",
+      "consistent-return": "off",
+      "no-console": "warn"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabwidth": true,
+    "trailingComma": "all"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
+  }
+}

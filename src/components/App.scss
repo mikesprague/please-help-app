@@ -1,0 +1,8 @@
+.page-wrapper {
+  @apply mx-auto;
+  @apply min-h-screen;
+  @apply flex;
+  @apply flex-wrap;
+  @apply justify-center;
+  @apply items-center;
+}
