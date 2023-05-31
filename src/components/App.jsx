@@ -15,6 +15,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 // import { useGeolocation } from '@uidotdev/usehooks';
 import withReactContent from 'sweetalert2-react-content';
 
+import { isDev } from '../modules/helpers.js';
+
 const MySwal = withReactContent(Swal);
 
 library.add(
@@ -75,11 +77,13 @@ export const App = () => {
       showClass: { popup: 'animate__animated animate__fadeIn animate__faster' },
     }).then((result) => {
       if (result.isConfirmed) {
-        // const val = countdown;
         btnStopCountdownRef.current.setAttribute('disabled', true);
         countdownRef.current.innerHTML = '--';
         setCountdown(null);
-        // window.close();
+
+        if (!isDev()) {
+          window.close();
+        }
       }
     });
   };
