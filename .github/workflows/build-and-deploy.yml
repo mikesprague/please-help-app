@@ -2,21 +2,13 @@ name: Production Build
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
-      - "src/**/*.*"
-      - "public/**/*.*"
-      - "package.json"
-      - "package-lock.json"
-      - ".github/workflows/**.yml"
-  pull_request:
-    branches: [ main ]
-    paths-ignore:
-      - "src/**/*.*"
-      - "public/**/*.*"
-      - "package.json"
-      - "package-lock.json"
-      - ".github/workflows/**.yml"
+      - 'src/**/*.*'
+      - 'public/**/*.*'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/**.yml'
 
   workflow_dispatch:
 
@@ -31,7 +23,8 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  NODE_VERSION: "18"
+  NODE_VERSION: '20'
+  FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
 
 jobs:
   build:
@@ -46,7 +39,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           check-latest: true
           cache: npm
-          cache-dependency-path: "**/package-lock.json"
+          cache-dependency-path: '**/package-lock.json'
 
       - name: ⚡ Cache node_modules
         uses: actions/cache@v3
@@ -59,8 +52,8 @@ jobs:
 
       - name: 🏗️ Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
-      
+        run: npm install
+
       - name: 🏗️ Build Site with Vite
         run: npm run build
 
