@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   faCarSide,
   faHandWave,
@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import got from 'got';
 import Swal from 'sweetalert2';
 import { library } from '@fortawesome/fontawesome-svg-core';
+// import { useSessionStorage } from '@uidotdev/usehooks';
 import withReactContent from 'sweetalert2-react-content';
 
 const MySwal = withReactContent(Swal);
@@ -30,6 +31,9 @@ import './App.scss';
 
 export const App = () => {
   const [countdown, setCountdown] = useState(60);
+  const countdownRef = useRef();
+  const btnStopCountdownRef = useRef();
+  // const [contacts, setContacts] = useSessionStorage('contacts', []);
 
   useEffect(() => {
     const handle = setTimeout(() => {
@@ -46,9 +50,6 @@ export const App = () => {
           // leaving this in for debugging purposes
         }
 
-        document
-          .querySelector('.btnStopCountdown')
-          .setAttribute('disabled', true);
         clearTimeout(handle);
 
         return;
@@ -75,10 +76,10 @@ export const App = () => {
       showClass: { popup: 'animate__animated animate__fadeIn animate__faster' },
     }).then((result) => {
       if (result.isConfirmed) {
-        const val = countdown;
-
+        // const val = countdown;
+        btnStopCountdownRef.current.setAttribute('disabled', true);
+        countdownRef.current.innerHTML = '--';
         setCountdown(null);
-        document.querySelector('.countdown').innerHTML = val;
         // window.close();
       }
     });
@@ -112,7 +113,7 @@ export const App = () => {
           </div>
           <div className="text-center">
             <p className="text-center my-2">&nbsp;</p>
-            <div className="countdown font-mono text-8xl">
+            <div className="countdown font-mono text-8xl" ref={countdownRef}>
               <span style={{ '--value': countdown }}></span>
             </div>
           </div>
@@ -124,6 +125,7 @@ export const App = () => {
           <p className="text-center mt-2">&nbsp;</p>
           <button
             onClick={stopCountdownHandler}
+            ref={btnStopCountdownRef}
             className="btn btn-md btn-outline mt-2 btnStopCountdown"
           >
             <FontAwesomeIcon
