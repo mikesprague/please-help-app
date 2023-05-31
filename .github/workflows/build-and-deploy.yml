@@ -52,7 +52,8 @@ jobs:
 
       - name: 🏗️ Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install
+        # force install because of experimental react packages
+        run: npm install --force
 
       - name: 🏗️ Build Site with Vite
         run: npm run build
