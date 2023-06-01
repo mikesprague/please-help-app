@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import got from 'got';
 import Swal from 'sweetalert2';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import useLocalStorageState from 'use-local-storage-state';
 // import { useGeolocation } from '@uidotdev/usehooks';
 import withReactContent from 'sweetalert2-react-content';
 
@@ -32,11 +33,37 @@ library.add(
 import './App.scss';
 
 export const App = () => {
+  const [contacts, setContacts] = useLocalStorageState('pha-contacts', {
+    defaultValue: [],
+  });
   const [countdown, setCountdown] = useState(60);
   const countdownRef = useRef();
   const btnStopCountdownRef = useRef();
 
   useEffect(() => {
+    if (!contacts.length) {
+      MySwal.fire({
+        title: 'No Contacts Found',
+        text: 'Please add at least one contact to continue.',
+        icon: 'warning',
+        iconColor: '#f4bf4f',
+        showCancelButton: true,
+        background: '#0c1322',
+        color: '#b4c6ef',
+        showClass: {
+          popup: 'animate__animated animate__fadeIn animate__faster',
+        },
+      });
+    } else {
+      // do stuff
+    }
+  }, [contacts]);
+
+  useEffect(() => {
+    if (!contacts.length) {
+      return;
+    }
+
     const handle = setTimeout(() => {
       if (!countdown) {
         if (countdown === 0) {
@@ -63,7 +90,7 @@ export const App = () => {
     }, 1000);
 
     return () => clearTimeout(handle);
-  }, [countdown]);
+  }, [countdown, contacts]);
 
   const stopCountdownHandler = () => {
     MySwal.fire({
@@ -88,7 +115,7 @@ export const App = () => {
     });
   };
 
-  return (
+  return contacts.length ? (
     <div className="page-wrapper">
       <div className="card w-fit bg-base-300 shadow-xl">
         <div className="card-body">
@@ -140,6 +167,8 @@ export const App = () => {
         </div>
       </div>
     </div>
+  ) : (
+    ''
   );
 };
 
