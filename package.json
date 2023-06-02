@@ -42,7 +42,7 @@
     "@fortawesome/react-fontawesome": "0.2.0",
     "@uidotdev/usehooks": "2.0.1",
     "daisyui": "3.0.1",
-    "dayjs": "1.11.7",
+    "dayjs": "1.11.8",
     "dotenv": "16.1.3",
     "got": "13.0.0",
     "he": "1.2.0",
