@@ -53,9 +53,22 @@ export const App = () => {
         showClass: {
           popup: 'animate__animated animate__fadeIn animate__faster',
         },
+        showConfirmButton: true,
+        confirmButtonText: 'Add Contact',
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          // const supported = 'contacts' in navigator;
+          const supportedProperties = await navigator.contacts.getProperties();
+          console.log(supportedProperties);
+          const props = ['name', 'email', 'tel', 'address', 'icon'];
+          const opts = { multiple: true };
+          const contacts = await navigator.contacts.select(props, opts);
+          handleResults(contacts);
+        }
       });
     } else {
       // do stuff
+      console.log(contacts);
     }
   }, [contacts]);
 
