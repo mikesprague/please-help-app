@@ -117,6 +117,9 @@
   },
   "eslintConfig": {
     "settings": {
+      "react": {
+        "version": "detect"
+      },
       "jest": {
         "version": 28
       }
@@ -156,24 +159,10 @@
       "sourceType": "module"
     },
     "rules": {
-      "node/no-missing-import": [
-        "error",
-        {
-          "tryExtensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ],
-      "node/no-unpublished-import": [
-        "warn",
-        {
-          "tryExtensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ],
+      "n/no-missing-import": "error",
+      "n/no-unpublished-import": "warn",
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error",
       "react/jsx-filename-extension": [
         "error",
         {
