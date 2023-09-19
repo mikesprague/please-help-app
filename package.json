@@ -52,7 +52,7 @@
     "react-dom": "18.2.0",
     "sweetalert2": "11.7.28",
     "sweetalert2-react-content": "5.0.7",
-    "use-local-storage-state": "19.0.4"
+    "use-local-storage-state": "19.1.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.22.15",
