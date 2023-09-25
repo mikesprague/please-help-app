@@ -61,7 +61,7 @@
     "@babel/preset-react": "7.22.15",
     "@fullhuman/postcss-purgecss": "5.0.0",
     "@tailwindcss/typography": "0.5.10",
-    "@vitejs/plugin-react-swc": "3.3.2",
+    "@vitejs/plugin-react-swc": "3.4.0",
     "autoprefixer": "10.4.16",
     "babel-plugin-add-react-displayname": "0.0.5",
     "cross-env": "7.0.3",
