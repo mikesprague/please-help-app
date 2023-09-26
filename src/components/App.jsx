@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faCarSide,
   faHandWave,
@@ -9,12 +9,12 @@ import {
   faTruckMedical,
 } from '@fortawesome/pro-duotone-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect, useRef, useState } from 'react';
 // import got from 'got';
 import Swal from 'sweetalert2';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import useLocalStorageState from 'use-local-storage-state';
 // import { useGeolocation } from '@uidotdev/usehooks';
 import withReactContent from 'sweetalert2-react-content';
+import useLocalStorageState from 'use-local-storage-state';
 
 import { isDev } from '../modules/helpers.js';
 
@@ -27,7 +27,7 @@ library.add(
   faTrafficLightGo,
   faTrafficLightSlow,
   faTrafficLightStop,
-  faTruckMedical,
+  faTruckMedical
 );
 
 import './App.scss';
@@ -138,17 +138,17 @@ export const App = () => {
           </h1>
           <h2>What kind of help do you need?</h2>
           <div className="card-actions">
-            <button className="btn btn-lg btn-block btn-info">
+            <button type="button" className="btn btn-lg btn-block btn-info">
               <FontAwesomeIcon icon="fa-duotone fa-person-walking" fixedWidth />
               &nbsp;Casual
               <small>(As Available)</small>
             </button>
-            <button className="btn btn-lg btn-block btn-warning">
+            <button type="button" className="btn btn-lg btn-block btn-warning">
               <FontAwesomeIcon icon="fa-duotone fa-car-side" fixedWidth />
               &nbsp;Somewhat Urgent
               <small>(As Soon As Possible)</small>
             </button>
-            <button className="btn btn-lg btn-block btn-error">
+            <button type="button" className="btn btn-lg btn-block btn-error">
               <FontAwesomeIcon icon="fa-duotone fa-truck-medical" fixedWidth />
               &nbsp;Emergency
               <small>(Immediately)</small>
@@ -157,7 +157,7 @@ export const App = () => {
           <div className="text-center">
             <p className="text-center my-2">&nbsp;</p>
             <div className="countdown font-mono text-8xl" ref={countdownRef}>
-              <span style={{ '--value': countdown }}></span>
+              <span style={{ '--value': countdown }} />
             </div>
           </div>
 
@@ -167,6 +167,7 @@ export const App = () => {
           </p>
           <p className="text-center mt-2">&nbsp;</p>
           <button
+            type="button"
             onClick={stopCountdownHandler}
             ref={btnStopCountdownRef}
             className="btn btn-md btn-outline mt-2 btnStopCountdown"
