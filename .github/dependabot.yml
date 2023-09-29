@@ -1,4 +1,9 @@
 version: 2
+registries:
+  fortawesome:
+    type: "npm-registry"
+    url: "https://npm.fontawesome.com/"
+    token: ${{secrets.FONT_AWESOME_TOKEN}}
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -12,6 +17,8 @@ updates:
       prefix-development: "chore"
       include: "scope"
   - package-ecosystem: "npm"
+    registries:
+      - fortawesome
     directory: "/"
     schedule:
       interval: "daily"
@@ -22,4 +29,3 @@ updates:
       prefix: "chore"
       prefix-development: "chore"
       include: "scope"
-
