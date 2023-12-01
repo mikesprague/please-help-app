@@ -31,7 +31,7 @@
   "homepage": "https://mikesprague.github.io/please-help-app",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.0",
-    "@fortawesome/free-brands-svg-icons": "6.5.0",
+    "@fortawesome/free-brands-svg-icons": "6.5.1",
     "@fortawesome/free-regular-svg-icons": "6.5.0",
     "@fortawesome/free-solid-svg-icons": "6.5.0",
     "@fortawesome/pro-duotone-svg-icons": "6.5.0",
