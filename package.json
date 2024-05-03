@@ -41,7 +41,7 @@
     "@fortawesome/pro-thin-svg-icons": "6.5.2",
     "@fortawesome/react-fontawesome": "0.2.0",
     "@uidotdev/usehooks": "2.4.1",
-    "daisyui": "4.10.3",
+    "daisyui": "4.10.5",
     "dayjs": "1.11.11",
     "dotenv": "16.4.5",
     "got": "14.2.1",
