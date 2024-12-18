@@ -51,7 +51,7 @@
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "sweetalert2": "11.15.2",
-    "sweetalert2-react-content": "5.0.7",
+    "sweetalert2-react-content": "5.1.0",
     "use-local-storage-state": "19.5.0"
   },
   "devDependencies": {
