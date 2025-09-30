@@ -43,7 +43,7 @@
     "@uidotdev/usehooks": "2.4.1",
     "daisyui": "5.1.25",
     "dayjs": "1.11.18",
-    "dotenv": "17.2.2",
+    "dotenv": "17.2.3",
     "got": "14.4.9",
     "he": "1.2.0",
     "nanoid": "5.1.6",
