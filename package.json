@@ -39,7 +39,7 @@
     "@fortawesome/pro-regular-svg-icons": "7.1.0",
     "@fortawesome/pro-solid-svg-icons": "7.0.1",
     "@fortawesome/pro-thin-svg-icons": "7.0.1",
-    "@fortawesome/react-fontawesome": "3.0.2",
+    "@fortawesome/react-fontawesome": "3.1.0",
     "@uidotdev/usehooks": "2.4.1",
     "daisyui": "5.1.26",
     "dayjs": "1.11.18",
