@@ -50,7 +50,7 @@
     "prop-types": "15.8.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "sweetalert2": "11.26.4",
+    "sweetalert2": "11.26.10",
     "sweetalert2-react-content": "5.1.1",
     "use-local-storage-state": "19.5.0"
   },
